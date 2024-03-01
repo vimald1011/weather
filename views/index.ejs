@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <p id="errorShow"></p>
+    </div>
+    <div class="cantainer">
+
+        <div class="mainDiv">
+            <div class="numberSide">
+                <span id="temp"> <%= tempt %> </span>
+                <span>&deg;C</span>
+            </div>
+            <div class="numberSide1">
+                <span id="location"> <%= location %> </span>
+            </div>
+        </div>
+        <div class="mainDiv1">
+            <div class="detailSide">
+                <span id="mainSvg"><img id="weather-app" src="./images/weather-app.png" alt="weather-app image"></span>
+            </div>
+            <div class="detailSide1">
+                <span class="detailWit" id="pressureSvg"><img src="./images/water.png" alt="water image"></span>
+                <span class="detailWit" id="pressureNum"> <%= humidity %> </span>
+                <span class="detailWit" id="windSvg"><img src="./images/wind.png" alt="wind image"></span>
+                <span class="detailWit" id="windNum"> <%= windSpeed %> </span>
+            </div>
+        </div>
+    </div>
+    <div class="loading"></div>
+    <!-- <div class="inputDiv"> -->
+    <form action="/getData" class="inputDiv">
+        <input id="inpBox" name="citty" type="search" placeholder="Enter City Name">
+        <button type="submit" id="subBtn">Submit</button>
+    </form>
+
+    <!-- </div> -->
+
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
