@@ -5,13 +5,10 @@ const bodyParser = require("body-parser");
 const port = 3000;
 const app = express();
 const token = process.env.API;
-// var city = 221502;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-// Define radha variable outside of route handlers
-const radha = `hello dear all i'm Radha Your mother!`;
 
 app.get("/", (req, res) => {
     res.render("index", {
