@@ -23,7 +23,7 @@ app.get("/getData", (req, res) => {
     async function weather() {
         const response = await fetch(url);
         const data = await response.json();
-        res.render("index", {
+        res.sendFile(__dirname + "/views/index.ejs", {
             tempt: Math.round(data.main.temp),
             location: data.name,
             windSpeed: Math.round(data.wind.speed),
