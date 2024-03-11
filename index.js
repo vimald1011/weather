@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const bodyParser = require("body-parser");
+var path = require('path');
 
 const port = 3000;
 const app = express();
@@ -9,15 +10,11 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+})
 
-app.get("/vi", (req, res) => {
-    res.render("public/index.html", {
-        tempt: 23,
-        location: "India",
-        windSpeed: "5",
-        humidity: 1.2
-    }); // Render the index without passing any additional data
-});
+
 
 app.get("/getData", (req, res) => {
     const city = req.query.citty;
